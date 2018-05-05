@@ -71,7 +71,14 @@ Create docker-compose.yml using following -
 
 
 
+# Build and Run Docker Container from Source
 
+Please Review Bash Script and make any change you need to adjust with your environment
+
+    git clone -b master  https://github.com/uzzal2k5/polis_container.git
+    cd  polis_container && sh polisContainer.sh
+    
+    Note : You can use your host IP rather than 127.0.0.1  in --advertise-addr 127.0.0.1 to initialize your docker swarm
 Build you own Image
 -----------------------
 
