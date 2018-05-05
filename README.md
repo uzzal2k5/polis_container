@@ -82,7 +82,7 @@ Please Review Bash Script and make any change you need to adjust with your envir
 
 
 # Build you own Image
------------------------
+
 
 Build polis_postgresql
 
