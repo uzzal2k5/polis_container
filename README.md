@@ -81,7 +81,7 @@ Please Review Bash Script and make any change you need to adjust with your envir
     Note : You can use your host IP rather than 127.0.0.1  in --advertise-addr 127.0.0.1 to initialize your docker swarm
 
 
-Build you own Image
+# Build you own Image
 -----------------------
 
 Build polis_postgresql
