@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# DIable SELinux
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+# Check OS
 OSNAME=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
 if [ ${OSNAME}=="CentOS Linux" ];
 then
