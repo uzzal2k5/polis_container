@@ -13,6 +13,17 @@ Polis Container using docker-compose
     
     docker-compose up -d
     
+## Prepare Docker Environment
+
+ Run *polisContainer.sh* if you are not aware of system os. This will install docker environment whether the os is ubuntu on centos 7. Go to *docker_setup/install.sh* to prepare your docker nevironment on ubuntu xenial (16.04) 
+        
+        sh polisContainer.sh
+        
+        # Docker install on Ubuntu 16.04 
+        
+        sh docker_setup/install.sh
+        
+
 Create docker-compose.yml using following -
 ----------------------------------------
     
