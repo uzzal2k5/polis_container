@@ -106,12 +106,14 @@ Please Review Bash Script and make any change you need to adjust with your envir
 
 
 # Build you own Image
+
 You can run polis-build.sh or follow the instruction bellow
     
     sh polis-build.sh
 
 
-#### Build Image Individually -
+
+####   Build Image Individually 
 
 Build polis_postgresql
 
