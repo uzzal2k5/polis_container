@@ -2,7 +2,7 @@ version: '2'
 services:
   # Polis PostgreSQL Database
   polisdb:
-    build: uzzal2k5/polis_postgresql:1.0
+    image: uzzal2k5/polis_postgresql:1.0
     container_name: polisdb
     ports:
       - "5432:5432/tcp"
