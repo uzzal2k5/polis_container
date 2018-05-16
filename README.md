@@ -66,7 +66,7 @@ Create docker-compose.yml using following -
     
             # Polis Client Admin 
             clientadmin:
-                image: uzzal2k5/polis_clientadmin:1.0
+                image: uzzal2k5/polis_clientadmin:latest
                 container_name: clientadmin
                 hostname: clientadmin
                 environment:
