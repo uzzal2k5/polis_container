@@ -51,19 +51,32 @@ Create docker-compose.yml using following -
                 restart: on-failure
 
             # Polis Client Admin & Participants
-            clientparticipation:
-                image: uzzal2k5/polis_adminparticipation:1.0
-                container_name: clientparticipation
-                hostname: clientparticipation
+            clientparticipant:
+                image: uzzal2k5/polis_clientparticipation:1.0
+                container_name: clientparticipant
+                hostname: clientparticipant
                 environment:
                   SERVICE_URL: polisserver
                 links:
                   - polisserver
                 ports:
                   - "5001:5001"
-                  - "5002:5002"
                   - "8000:8000"
                 restart: on-failure
+    
+            # Polis Client Admin 
+            clientadmin:
+                image: uzzal2k5/polis_clientadmin:1.0
+                container_name: clientadmin
+                hostname: clientadmin
+                environment:
+                  SERVICE_URL: polisserver
+                links:
+                  - polisserver
+                ports:
+                  - "5002:5002"
+                restart: on-failure
+
 
             # Polis Math Container
             math:
@@ -93,35 +106,46 @@ Please Review Bash Script and make any change you need to adjust with your envir
 
 
 # Build you own Image
+You can run polis-build.sh or follow the instruction bellow
+    
+    sh polis-build.sh
 
+
+####Build Image Individually -
 
 Build polis_postgresql
 
       
-    git clone https://bitbucket.org/shafiq2k5/polispostgres.git
+    git clone hhttps://github.com/uzzal2k5/polispostgres.git
         cd   polispostgres
         docker build -t polis_postgresql .
         
 Build polis_leiningen 
    
-    git clone https://bitbucket.org/shafiq2k5/polisleiningen.git
+    git clone https://github.com/uzzal2k5/polisleiningen.git
     cd  polisleiningen
     docker build -t polis_leiningen .
  
-Build polis_adminparticipants   
+Build polis_ClientParticipation   
     
-    git clone https://bitbucket.org/shafiq2k5/polis_adminparticipants.git
-    cd  polis_adminparticipants
-    docker build  -t polis_adminparticipants .
+    git clone https://github.com/uzzal2k5/polisClientParticipation.git
+    cd  polisClientParticipation
+    docker build  -t polis_clientparticipants .
+
+Build polis_ClientAdmin   
+    
+    git clone https://github.com/uzzal2k5/polisClientAdmin.git
+    cd  polisClientAdmin
+    docker build  -t polis_clientadmin .
 
 Build polis_server  
     
-    git clone https://bitbucket.org/shafiq2k5/polisserver.git
+    git clone https://github.com/uzzal2k5/polisserver.git
     cd polisserver
     docker build -t polis_server .
 Build polis_math
  
-    git clone https://bitbucket.org/shafiq2k5/polismath.git
+    git clone https://github.com/uzzal2k5/polismath.git
     cd  polismath
     docker build polis_math .
      

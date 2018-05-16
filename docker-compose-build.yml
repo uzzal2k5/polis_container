@@ -2,7 +2,7 @@ version: '2'
 services:
   # Polis PostgreSQL Database
   polisdb:
-    image: uzzal2k5/polis_postgresql:1.0
+    build: uzzal2k5/polis_postgresql:1.0
     container_name: polisdb
     ports:
       - "5432:5432/tcp"
@@ -10,7 +10,7 @@ services:
 
   # Polis Server
   polisserver:
-    image: uzzal2k5/polis_server:1.0
+    build: polisserver
     container_name: polisserver
     ports:
       - "5000:5000/tcp"
@@ -23,7 +23,7 @@ services:
 
   # Polis Client Admin & Participants
   clientparticipant:
-    image: uzzal2k5/polis_clientparticipation:1.0
+    build: polisClientParticipation
     container_name: clientparticipant
     hostname: clientparticipant
     environment:
@@ -37,7 +37,7 @@ services:
 
   # Polis Client Admin
   clientadmin:
-    image: uzzal2k5/polis_clientadmin:1.0
+    build: polisClientAdmin
     container_name: clientadmin
     hostname: clientadmin
     environment:
@@ -50,7 +50,7 @@ services:
 
   # Polis Math Container
   math:
-    image: uzzal2k5/polis_math:1.0
+    build: polismath
     container_name: math
     hostname: math
     environment:
