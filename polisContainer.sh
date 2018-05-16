@@ -13,10 +13,14 @@ then
  fi
 
 
-mkdir POLIS_CONTAINER && cd POLIS_CONTAINER
-git clone -b master https://github.com/uzzal2k5/polispostgres.git
-git clone -b master https://github.com/uzzal2k5/polisserver.git
-git clone -b master https://github.com/uzzal2k5/polis_adminparticipants.git
-giot clone -b master https://github.com/uzzal2k5/polismath.git
+repo=('polisserver','polisClientAdmin','polisClientParticipation','polismath')
 
-docker-compose -f polisDocker-compose.yml up
+for i in "${repo[@]}" ;
+do
+cd ..
+git clone https://github.com/uzzal2k5/$i.git
+done
+cd ..
+cp polis_container/docker-compose-build.yml .
+docker-compose -f docker-compose-build.yml up -d
+
