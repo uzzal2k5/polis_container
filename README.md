@@ -109,7 +109,8 @@ Please Review Bash Script and make any change you need to adjust with your envir
 
 You can run polis-build.sh or follow the instruction bellow
     
-    sh polis-build.sh
+    git clone -b master  https://github.com/uzzal2k5/polis_container.git
+    cd  polis_container && sh polis-build.sh
 
 
 
