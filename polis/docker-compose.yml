@@ -10,7 +10,7 @@ services:
 
   # Polis Server
   polisserver:
-    image: uzzal2k5/polis_server:latest
+    image: uzzal2k5/polis_server:1.0
     container_name: polisserver
     ports:
       - "5000:5000/tcp"
