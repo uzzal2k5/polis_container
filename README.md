@@ -39,20 +39,20 @@ Create docker-compose.yml using following -
 
             # Polis Server
             polisserver:
-                image: uzzal2k5/polis_server:1.0
+                image: uzzal2k5/polis_server:latest
                 container_name: polisserver
                 ports:
                   - "5000:5000/tcp"
                 links:
                   - polisdb
                 environment:
-                  DATABASE_URL: postgres://polis:polis@polisdb/polis
+                  DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
                   STATIC_FILES_HOST: clientparticipation
                 restart: on-failure
 
             # Polis Client Admin & Participants
             clientparticipant:
-                image: uzzal2k5/polis_clientparticipation:1.0
+                image: uzzal2k5/polis_clientparticipation:latest
                 container_name: clientparticipant
                 hostname: clientparticipant
                 environment:
@@ -85,7 +85,7 @@ Create docker-compose.yml using following -
                 hostname: math
                 environment:
                   SERVICE_URL: polisserver
-                  DATABASE_URL: postgres://polis:polis@polisdb/polis
+                  DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
                 links:
                   - polisserver
                   - polisdb

@@ -10,14 +10,14 @@ services:
 
   # Polis Server
   polisserver:
-    image: uzzal2k5/polis_server:1.0
+    image: uzzal2k5/polis_server:latest
     container_name: polisserver
     ports:
       - "5000:5000/tcp"
     links:
       - polisdb
     environment:
-      DATABASE_URL: postgres://polis:polis@polisdb/polis
+      DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
       STATIC_FILES_HOST: clientadmin
     restart: on-failure
 
@@ -57,7 +57,7 @@ services:
     hostname: math
     environment:
       SERVICE_URL: polisserver
-      DATABASE_URL: postgres://polis:polis@polisdb/polis
+      DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
     links:
       - polisserver
       - polisdb

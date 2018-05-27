@@ -17,7 +17,7 @@ services:
     links:
       - polisdb
     environment:
-      DATABASE_URL: postgres://polis:polis@polisdb/polis
+      DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
       STATIC_FILES_HOST: clientparticipation
     restart: on-failure
 
@@ -43,7 +43,7 @@ services:
     hostname: math
     environment:
       SERVICE_URL: polisserver
-      DATABASE_URL: postgres://polis:polis@polisdb/polis
+      DATABASE_URL: postgres://polis:polis@polisdb:5432/polis
     links:
       - polisserver
       - polisdb
