@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # Install Docker-ce
-apt-get update && apt-get install \
-apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
+apt-get update -y
 
 apt-get install -y wget curl
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
