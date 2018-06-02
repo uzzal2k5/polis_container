@@ -4,6 +4,7 @@ services:
   polisdb:
     image: uzzal2k5/polis_postgresql:1.0
     container_name: polisdb
+    hostname: polisdb
     ports:
       - "5432:5432/tcp"
     restart: on-failure
@@ -12,6 +13,7 @@ services:
   polisserver:
     image: uzzal2k5/polis_server:latest
     container_name: polisserver
+    hostname: polisserver
     ports:
       - "5000:5000/tcp"
     links:
